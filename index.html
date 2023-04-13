@@ -12,25 +12,27 @@
 <body>
     <div class="wrapper">
         <h1>1. Навігація</h1>
-        <ul class="head main-menu flex-between">
-            <li><a href="#">Ковбаса</a></li>
-            <li><a href="#">Салатік</a></li>
-            <li><a href="#">Крабові палочки</a></li>
-            <li><a href="#">Молоко</a></li>
-        </ul>
+        <nav>
+            <ul class="head main-menu flex-between menu">
+                <li><a href="#">Ковбаса</a></li>
+                <li><a href="#">Салатік</a></li>
+                <li><a href="#">Крабові палочки</a></li>
+                <li><a href="#">Молоко</a></li>
+            </ul>
+        </nav>
 
-        <table class="table menu">
-            <tr>
-                <th>Ноутбук</th>
-                <th>Телефон</th>
-                <th>Холодильник</th>
-                <th>Товари для дорослих та дітей</th>
-                <th>Різне</th>
-            </tr>
-        </table>
+        <nav class="bottom table-menu">
+            <ul class="menu">
+                <li><a href="#">Ноутбук</a></li>
+                <li><a href="#">Телефон</a></li>
+                <li><a href="#">Холодильник</a></li>
+                <li><a href="#">Товари для дорослих та дітей</a></li>
+                <li><a href="#">Різне</a></li>
+            </ul>
+        </nav>
 
         <nav class="head-vilage flex-between">
-            <ul class="vilage-menu main-menu">
+            <ul class="vilage-menu main-menu menu">
                 <li><a href="#">Головна</a></li>
                 <li><a href="#">Про село</a></li>
                 <li><a href="#">Наші послуги</a></li>
@@ -47,7 +49,7 @@
             <thead>
                 <tr class="head">
                     <th rowspan="2">№</th>
-                    <th rowspan="2" class="name">Ім’я</th>
+                    <th rowspan="2" class="table-name">Ім’я</th>
                     <th colspan="3">Результати</th>
                 </tr>
                 <tr class="head">
@@ -117,10 +119,10 @@
         </table>
 
         <h2>3. Таблиця стилями</h2>
-        <nav class="table main-table">
+        <nav class="table main-table table-table">
             <p class="head">
                 <b>№</b>
-                <b>Назва товару</b>
+                <b class="table-name">Назва товару</b>
                 <b>CPU</b>
                 <b>SSD</b>
                 <b>GPU</b>

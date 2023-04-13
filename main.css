@@ -15,10 +15,6 @@ h1, h2 {
     text-transform: uppercase;
 }
 
-nav {
-    display: table;
-}
-
 p {
     display: table-row;
 }
@@ -39,7 +35,27 @@ ul {
     justify-content: space-between;
 }
 
-.head {
+.menu {
+    border-radius: 3px;
+}
+
+.menu>li>a {
+    border-left: 1px solid #3f4852;
+    border-right: 1px solid #3f4852;
+}
+
+.menu>li:first-child>a {
+    border-left: none;
+    border-radius: 3px 0 0 3px;
+}
+
+.menu>li:last-child>a {
+    border-right: none;
+    border-radius: 0 3px 3px 0;
+}
+
+.head,
+.head>b {
     color: #ffffff;
     background-color: #2a3644;
     font-weight: bold;
@@ -51,12 +67,12 @@ ul {
     color: #ffffff;
     font-size: 16px;
     font-weight: bold;
-    border: 1px solid #3f4852;
     text-decoration: none;
 }
 
-th {
-    padding: 10px 0;
+.head>th,
+.head>b {
+    padding: 14px 24px;
 }
 
 .table {
@@ -66,7 +82,8 @@ th {
     overflow: hidden;
 }
 
-.table th+th {
+.table th+th,
+.table b+b {
     border-left: 1px solid #3f4852;
 }
 
@@ -76,31 +93,60 @@ th {
 }
 
 .table td+td,
-b {
+.table-table>p+p>b+b {
     border-left: 1px solid #c0c1c2;
 }
 
 .table tr+tr td,
-b {
+.table-table>p+p+p>b {
     border-top: 1px solid #c0c1c2;
 }
 
-.table td {
-    padding: 0 24px;
+.table td,
+.table-table>p+p>b {
+    padding: 14px 24px;
     color: #2a3644;
     font-size: 16px;
     transition: all .3s ease;
+    font-weight: normal;
+}
+
+nav.table-menu {
+    display: table;
+    width: 100%; 
+}
+
+.table-menu>ul {
+    display: table-row;
+}
+
+.table-menu>ul>li {
+    display: table-cell;
+}
+
+.table-menu a {
+    display: block;
+    text-decoration: none;
+    text-align: center;
+}
+
+.table-menu>li:first-child>a {
+    border-radius: 3px 3px 0 0;
+}
+
+.table-menu>li:last-child>a {
+    border-radius: 3px 3px 0 0;
 }
 
 .statistic {
     margin-bottom: 50px;
 }
 
-.menu {
+.bottom {
     margin-top: 40px;
 }
 
-.menu th {
+.table-menu a {
     padding: 15px 0;
     color: #ffffff;
     font-weight: bold;
@@ -108,7 +154,8 @@ b {
 }
 
 .menu th:hover,
-.main-menu li:hover>a {
+.main-menu li:hover>a,
+.table-menu li:hover>a {
     color: #fd8612;
     background-color: #3f4852;
 }
@@ -117,8 +164,9 @@ b {
     margin-top: 40px;
     margin-bottom: 51px;
     color: #ffffff;
-    background-color: #2a3644;
     font-weight: bold;
+    background-color: #2a3644;
+    border-radius: 3px;
 }
 
 .head-vilage>ul>li {
@@ -172,43 +220,40 @@ a.inst:hover {
     background-position: -32px -20px;
 }
 
-.name {
+.table-name {
     padding: 0 24px;
     text-align: left;
+    font-size: 16px;
+    width: 50%;
 }
 
 td:first-child,
 b:first-child {
-    padding: 13px 28px;
-    width: 20px;
+    width: 60px;
+    box-sizing: border-box;
+    text-align: center;
 }
 
 .table tbody td:nth-child(n+3),
-b:nth-child(n+3) {
-    padding: 0 10px;
+.table b:nth-child(n+3) {
     text-align: right;
 }
 
 .table tbody tr:nth-child(odd),
-p+p:nth-child(odd) {
+.table p+p:nth-child(odd) {
     background-color: #f2f2f2;
 }
 
 .table tbody tr:nth-child(even),
-p+p:nth-child(even) {
+.table p+p:nth-child(even) {
     background-color: #e8e8e8;
 }
 
 .table tr:hover td,
-p+p:hover b {
+.table p+p:hover b {
     background-color: #c0c1c2;
 }
 
-p:first-child {
-    border: 1px solid #3f4852;
-
+.table-table {
+    display: table;
 }
-
-/* .head p>b {
-    background-color: #3f4852;
-} */
