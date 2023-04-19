@@ -7,7 +7,8 @@ body {
     padding: 70px 120px;
 }
 
-h1, h2 {
+h1,
+h2 {
     padding: 9px 0;
     color: #bfbfbf;
     font-size: 24px;
@@ -54,6 +55,15 @@ ul {
     border-radius: 0 3px 3px 0;
 }
 
+.menu li {
+    position: relative;
+}
+
+/* будьяка лішка яка має суб меню приховері буде показана */
+.menu li:hover>.sub-menu {
+    display: block;
+}
+
 .head,
 .head>b {
     color: #ffffff;
@@ -61,7 +71,7 @@ ul {
     font-weight: bold;
 }
 
-.main-menu a {
+.menu>li>a {
     display: block;
     padding: 13px 30px;
     color: #ffffff;
@@ -73,6 +83,32 @@ ul {
 .head>th,
 .head>b {
     padding: 14px 24px;
+}
+
+.sub-menu {
+    position: absolute;
+    display: none;
+    width: 210px;
+    border-radius: 3px;
+    z-index: 1;
+}
+
+.sub-menu li+li {
+    border-top: 1px solid #b9bdc1;
+}
+
+.sub-menu li a {
+    display: block;
+    padding: 10px 20px;
+    color: #2a3644;
+    font-size: 15px;
+    background-color: #d2d4d5;
+    text-decoration: none;
+}
+
+.sub-menu li a:hover {
+    color: #ff8505;
+    background-color: #2a3644;
 }
 
 .table {
@@ -113,7 +149,7 @@ ul {
 
 nav.table-menu {
     display: table;
-    width: 100%; 
+    width: 100%;
 }
 
 .table-menu>ul {
@@ -124,7 +160,7 @@ nav.table-menu {
     display: table-cell;
 }
 
-.table-menu a {
+.table-menu>a {
     display: block;
     text-decoration: none;
     text-align: center;
@@ -153,9 +189,7 @@ nav.table-menu {
     background-color: #2a3644;
 }
 
-.menu th:hover,
-.main-menu li:hover>a,
-.table-menu li:hover>a {
+.menu>li:hover>a {
     color: #fd8612;
     background-color: #3f4852;
 }
