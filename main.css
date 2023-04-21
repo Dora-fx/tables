@@ -64,13 +64,6 @@ ul {
     display: block;
 }
 
-.head,
-.head>b {
-    color: #ffffff;
-    background-color: #2a3644;
-    font-weight: bold;
-}
-
 .menu>li>a {
     display: block;
     padding: 13px 30px;
@@ -80,16 +73,37 @@ ul {
     text-decoration: none;
 }
 
+.head,
+.head>b {
+    color: #ffffff;
+    background-color: #2a3644;
+    font-weight: bold;
+    text-align: center;
+}
+
 .head>th,
 .head>b {
     padding: 14px 24px;
 }
 
+.head {
+    text-align: center;
+}
+
+.sub-menu::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 0;
+    height: 5px;
+    width: 100%;
+}
+
 .sub-menu {
     position: absolute;
+    top: calc(100% + 5px);
     display: none;
     width: 210px;
-    border-radius: 3px;
     z-index: 1;
 }
 
@@ -104,11 +118,66 @@ ul {
     font-size: 15px;
     background-color: #d2d4d5;
     text-decoration: none;
+    text-align: left;
 }
 
-.sub-menu li a:hover {
+.sub-menu li:first-child>a {
+    border-radius: 3px 3px 0 0;
+}
+
+.sub-menu li:last-child>a {
+    border-radius: 0 0 3px 3px;
+}
+
+.sub-menu li:hover>a {
     color: #ff8505;
     background-color: #2a3644;
+}
+
+.second-level-sub {
+    top: 0;
+    left: calc(100% + 5px);
+}
+
+.second-level-sub::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -5px;
+    height: 100%;
+    width: 5px;
+}
+
+.third-level-sub {
+    top: 0;
+    right: calc(100% + 5px);
+}
+
+.third-level-sub::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 100%;
+    height: 100%;
+    width: 5px;
+}
+
+.menu li:hover>.sub-services {
+    display: flex;
+}
+
+.sub-services {
+    width: auto;
+    background-color: #d2d4d5;
+    border-radius: 3px;
+}
+
+.sub-services ul {
+    width: 210px;
+}
+
+.sub-services ul+ul {
+    border-left: 1px solid #b9bdc1;
 }
 
 .table {
@@ -160,7 +229,7 @@ nav.table-menu {
     display: table-cell;
 }
 
-.table-menu>a {
+.table-menu>ul>li>a {
     display: block;
     text-decoration: none;
     text-align: center;
@@ -224,6 +293,26 @@ nav.table-menu {
     background: url(img/tabl.png) no-repeat;
 }
 
+.menu .home {
+    position: relative;
+    padding-left: 58px;
+}
+
+.home::before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 30px;
+    height: 13px;
+    width: 16px;
+    background: url(img/tabl.png) no-repeat;
+    background-position: -53px 0;
+}
+
+.home:hover::before {
+    background-position: -53px -20px;
+}
+
 a.fb {
     height: 19px;
     width: 10px;
@@ -269,17 +358,17 @@ b:first-child {
 }
 
 .table tbody td:nth-child(n+3),
-.table b:nth-child(n+3) {
+.table p+p b:nth-child(n+3) {
     text-align: right;
 }
 
 .table tbody tr:nth-child(odd),
-.table p+p:nth-child(odd) {
+.table p+p:nth-child(even) {
     background-color: #f2f2f2;
 }
 
 .table tbody tr:nth-child(even),
-.table p+p:nth-child(even) {
+.table p+p:nth-child(odd) {
     background-color: #e8e8e8;
 }
 
